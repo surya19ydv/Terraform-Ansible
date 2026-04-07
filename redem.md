@@ -94,31 +94,51 @@ sudo mv terraform /usr/local/bin/
 
 ## 🔑 Prerequisites
 
-* AWS account
-* AWS CLI configured (`aws configure`)
-* SSH key pair (`terra-key`)
-* Security Group (Port 22 & 80 open)
+Before running this project, ensure you have:
+
+- AWS Account
+- AWS CLI installed & configured (`aws configure`)
+- Terraform installed
+- VS Code (or any code editor)
+- SSH Key Pair (`terra-key`)
+- Basic knowledge of AWS & Linux
 
 ---
 
-## 🚀 Step 1: Terraform (Infrastructure Setup)
+## 🏗️ Infrastructure Created
+
+Using Terraform, the following resources are created:
+
+- Default VPC
+- Security Group (Ports 22 & 80 open)
+- EC2 Instance
+- Key Pair attachment
+- Multiple resources using `count` and `for_each`
+- Resource dependency using `depends_on`
+
+---
+
+## ⚙️ Terraform Commands
 
 ```bash
-terraform init
-terraform validate
-terraform plan
-terraform apply
-```
-
-👉 Creates:
-
-* EC2 instance
-* Security group
-* Key pair attachment
-
----
-
+terraform init       # Initialize project
+terraform validate   # Validate configuration
+terraform plan       # Preview changes
+terraform apply      # Create infrastructure
 ## 🌐 Step 2: Connect to EC2
+
+🧠 Terraform Concepts Used
+🔹 count
+
+Used to create multiple EC2 instances.
+
+🔹 for_each
+
+Used for dynamic resource creation.
+
+🔹 depends_on
+
+Ensures correct resource creation order.
 
 ```bash
 ssh -i terra-key ubuntu@<public-ip>
@@ -277,7 +297,3 @@ This project demonstrates:
 
 ---
 
-
-## 📌 Note
-
-This project is designed to build strong fundamentals before moving to advanced automation.
