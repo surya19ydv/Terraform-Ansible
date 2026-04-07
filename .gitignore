@@ -6,6 +6,7 @@
 # Sensitive keys
 terra-key
 *.pem
+*.pub
 
 # Ansible temp files
 *.retry
