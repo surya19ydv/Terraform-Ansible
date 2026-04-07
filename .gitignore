@@ -1,0 +1,15 @@
+# Terraform files
+.terraform/
+*.tfstate
+*.tfstate.backup
+
+# Sensitive keys
+terra-key
+*.pem
+
+# Ansible temp files
+*.retry
+
+# OS generated files
+.DS_Store   
+Thumbs.db

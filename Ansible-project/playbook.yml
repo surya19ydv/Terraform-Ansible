@@ -1,0 +1,23 @@
+---
+- name: Nginx install, start and website deployment
+  hosts: servers
+  become: true
+
+  tasks:
+    - name: Install nginx
+      apt:
+        name: nginx
+        state: present
+        update_cache: yes
+
+    - name: Start nginx
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
+    - name: Deploy static website file
+      copy:
+        src: index.html
+        dest: /var/www/html/index.html
+        force: yes
