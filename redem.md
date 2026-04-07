@@ -20,26 +20,44 @@ This project demonstrates how to provision infrastructure using **Terraform** an
 ## 🏗️ Complete Project Structure (Detailed)
 
 ```
+## 🏗️ Complete Project Structure (Detailed)
 Terraform_folder/
 ├── Terraform-Aws-EC2/
 │
 │   ├── provider.tf
+│   │   → AWS provider configuration
+│
 │   ├── terraform.tf
+│   │   → Terraform settings & required providers
+│
 │   ├── variable.tf
+│   │   → Input variables (AMI, instance type)
+│
 │   ├── ec2.tf
+│   │   → EC2 + Security Group creation
+│
 │   ├── output.tf
+│   │   → Outputs (Public IP, Instance ID)
+│
 │   ├── nginx_install.sh
+│   │   → Installs Nginx using user-data script
+│
 │   ├── terra-key (⚠️ DO NOT PUSH)
 │   ├── terra-key.pub
+│
 │   ├── terraform.tfstate (⚠️ DO NOT PUSH)
 │   ├── terraform.tfstate.backup
 │
-│   └── Ansibal-project/
+│   └── Ansible-project/
+│
 │       ├── inventory.ini
+│       │   → Target EC2 IP & SSH config
+│
 │       ├── playbook.yml
+│       │   → Nginx install + start + deploy site
+│
 │       ├── index.html
-```
-
+│       │   → Custom webpage
 ---
 
 ## ⚙️ Technologies Used
@@ -151,7 +169,7 @@ Nginx Installed & Website Deployed
 #### 1. Navigate to Ansible directory
 
 ```bash
-cd Ansibal-project
+cd Ansible-project
 ```
 
 ---
@@ -258,6 +276,7 @@ This project demonstrates:
 ✔ Local-to-remote automation using SSH
 
 ---
+
 
 ## 📌 Note
 
